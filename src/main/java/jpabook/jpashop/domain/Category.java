@@ -1,8 +1,11 @@
 package jpabook.jpashop.domain;
 
+import static javax.persistence.FetchType.LAZY;
+
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -25,7 +28,7 @@ public class Category extends BaseEntity {
       inverseJoinColumns = @JoinColumn(name = "ITEM_ID"))
   private List<Item> items = new ArrayList<>();
 
-  @ManyToOne
+  @ManyToOne(fetch = LAZY)
   @JoinColumn(name = "PARENT_ID")
   private Category parent;
 
