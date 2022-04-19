@@ -14,7 +14,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(name = "ORDER_ITEM")
-public class OrderItem {
+public class OrderItem extends BaseEntity{
 
   @Id
   @GeneratedValue
